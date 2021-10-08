@@ -84,6 +84,8 @@
     font-size: 20px;
     color: gray;
     width: auto;
+    display: flex;
+    flex-direction: column-reverse;
     overflow-y: scroll;
 }
 ::-webkit-scrollbar {

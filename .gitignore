@@ -1,8 +1,5 @@
 node_modules
-.env
+.next
 .git
 package-lock.json
 #idk if i should keep package lock 
-
-views/calcappc.js
-#just a babel compiled file of views/calcapp.js

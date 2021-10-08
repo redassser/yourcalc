@@ -1,61 +1,60 @@
 import { solve } from "./calc.js";
+import Head from "next/head";
+import React, {useState} from "react"
 
-class Calculator extends React.Component {
-  constructor(props) {
-    super(props);
-    this.handleSub = this.handleSub.bind(this);
-    this.handleEnter = this.handleEnter.bind(this);
-    this.state = { ans:"", inputValue: "", list:[] };
-  }
-  handleInput(evt) {
-    this.setState({inputValue:evt.target.value});
-  }
-  handleEnter = (event) => {
-      if(event.key === "Enter") {
-          this.handleSub()
-      }
-  }
-  handleSub() {
-    var outp = solve(this.state.inputValue);
-    var comboVal = this.state.inputValue + " = " + outp[0];
-    var tlist = this.state.list;
-    this.el.scrollIntoView({behavior:"smooth"})
-    tlist.push(comboVal);
-    this.setState({list:tlist});
-    this.setState({ans:outp[0]});
-  }
-
-  render() {
-        var divList = []; var i = 0;
-        console.log(this.state) 
-        this.state.list.forEach(combo => {
-            i++;
-            divList.push(<div className="combo" key={i}>{combo}</div>);
-        });
+function Calculator({initialAns}) {
+    const [ans, setAns] = useState(initialAns)
+    const [list, setList] = useState([])
+    var inputValue = "";
+    function handleInput(evt) {
+        inputValue = evt.target.value;
+        console.log(inputValue)
+    }
+    function handleEnter() {
+            //handleSub()
+    }
+    function handleSub() {
+        var outp = solve(inputValue);
+        var comboVal = inputValue + " = " + outp[0];
+        list.push(comboVal)
+        setList(list);
+        setAns(outp[0]);
+    }
+    
+    var divList = []; var i = 0;
+    list.forEach(combo => {
+        i++;
+        divList.unshift(<div className="combo" key={i}>{combo}</div>);
+    });
     return (
         <div id="mainbox">
+            <Head>
+                <title>TDOP Calculator</title>
+            </Head>
+            <main>
             <table id="history">
                 <tbody>
                     <tr>
                         <td>
                             <div id="previous">
                             {divList}
-                            <div ref={el => {this.el = el}}></div>
                             </div>
                             
                         </td>
                     </tr>
                 </tbody>
                 <tfoot>
-                    <tr >
-                        <td id="solution">{this.state.ans}</td>
+                    <tr>
+                        <td id="solution">{ans}</td>
                     </tr>
                 </tfoot>
             </table>
             <table id="calc">
                 <thead>
                     <tr>
-                        <td id="input" colSpan="6"><input onKeyPress={this.handleEnter} type="text" id="stuf" placeholder="Type your expression here." value={this.state.inputValue} onChange={evt => this.handleInput(evt)}></input></td>
+                        <td id="input" colSpan="6">
+                            <input onKeyPress={handleEnter} type="text" id="stuf" placeholder="Type your expression here." onChange={evt => handleInput(evt)}></input>
+                        </td>
                     </tr>
                 </thead>
                 <tbody>
@@ -89,29 +88,13 @@ class Calculator extends React.Component {
                         <td className="button"><button className="inp">*</button></td>
                         <td className="button"><button className="inp">/</button></td>
                         <td className="button"><button className="inp">ans</button></td>
-                        <td className="button" id="equals"><button className="inp" onClick={this.handleSub}>=</button></td>
+                        <td className="button" id="equals"><button className="inp" onClick={handleSub}>=</button></td>
                     </tr>
                 </tbody>
             </table>
+            </main>
         </div>
+        
     )
-  }
 }
-class Submit extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {}
-    }
-    sub() {
-        this.set
-    }
-    render() {
-        return (
-            <button className="inp" onClick={this.sub}>=</button>
-        )
-    }
-
-}
-
-const domContainer = document.querySelector('#root');
-ReactDOM.render(<Calculator />, domContainer);
+export default Calculator;
