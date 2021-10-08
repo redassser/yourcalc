@@ -1,0 +1,23 @@
+{
+  "name": "tdopcalcbyryan",
+  "description": "a calculator using a simple tdop algorithm, made by ryan",
+  "version": "0.2.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": "12.18.3"
+  },
+  "author": "pie",
+  "license": "ISC",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-react-app": "^3.1.2",
+    "express": "^4.17.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {},
+  "keywords": []
+}
