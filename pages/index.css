@@ -1,12 +1,9 @@
-#root {
-    margin-bottom: 200px;
-}
 #mainbox {
     margin: auto;
     height: 600px;
-    width: 700px;
+    width: 500px;
     text-align: center;
-    font-family:Verdana, Geneva, Tahoma, sans-serif
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 /*Calculator*/
 #calc {

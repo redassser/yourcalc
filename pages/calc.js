@@ -1,7 +1,7 @@
 //define the token variables for iterating
 var token; var tokens=[]; var token_nr = 0;
 //The tokenation regex
-var reg = /(?:(\d+(\.\d+)?)|(.))/g;
+var reg = /(?:(\d+(\.\d+)?(\e(\+|\-)?\d+)?)|(.))/g;
 //error code holder
 var er;
 

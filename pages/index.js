@@ -2,13 +2,12 @@ import { solve } from "./calc.js";
 import Head from "next/head";
 import React, {useState} from "react"
 
-function Calculator({initialAns}) {
-    const [ans, setAns] = useState(initialAns)
-    const [list, setList] = useState([])
-    var inputValue = "";
+function Calculator({initialAns,initialValue}) {
+    const [ans, setAns] = useState(initialAns);
+    const [list, setList] = useState([]);
+    const [inputValue, setInputValue] = useState(initialValue);
     function handleInput(evt) {
-        inputValue = evt.target.value;
-        console.log(inputValue)
+        setInputValue(evt.target.value);
     }
     function handleEnter() {
             //handleSub()
