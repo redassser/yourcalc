@@ -1,4 +1,4 @@
-import { solve } from "./calc.js";
+import { solve } from "../public/calc.js";
 import Head from "next/head";
 import React, {useState} from "react"
 
