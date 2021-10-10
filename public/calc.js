@@ -3,7 +3,7 @@ var token; var tokens=[]; var token_nr = 0;
 //The tokenation regex
 var reg = /(?:(\d+(\.\d+)?(\e(\+|\-)?\d+)?)|(.))/g;
 //error code holder
-var er;
+var er; var answer;
 
 //defailt symbol and holder
 var symbol_table = {};
@@ -87,6 +87,10 @@ var numb = symbol("(literal)"); //Digits and floats
     numb.nud = function () {return this.value;}
 var pi = symbol("p"); //pi
     pi.nud = function () {return Math.PI};
+var an = symbol("a"); //ans
+    an.nud = function () {
+        return answer;
+    };
 
 //Turns the input string into an iterable array of tokens
 function tokenize(str) {
@@ -144,7 +148,9 @@ function expression(rbp) {
     return left;
 }
 
-export function solve(inp) {
+export function solve(inp, ans) {
+    answer = ans;
+    console.log(an.nud())
     er=0; token = null; tokens=[]; token_nr = 0; //Default everything
     tokenize(inp); advance(); //Turns the input into tokens and get to the first one
     var resu = expression(0); //Find the result
