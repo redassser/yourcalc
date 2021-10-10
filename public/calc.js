@@ -100,7 +100,6 @@ function tokenize(str) {
             obje.type = "number"
         } else {obje.type = "operator"}
         tokens.push(obje);
-        console.log(obje)
     }
 } 
 //advances through the token array one at a time
@@ -150,7 +149,6 @@ function expression(rbp) {
 
 export function solve(inp, ans) {
     answer = ans;
-    console.log(an.nud())
     er=0; token = null; tokens=[]; token_nr = 0; //Default everything
     tokenize(inp); advance(); //Turns the input into tokens and get to the first one
     var resu = expression(0); //Find the result

@@ -3,6 +3,7 @@ import Head from "next/head";
 import React, {useState} from "react"
 
 function Calculator({initialAns,initialValue}) {
+    console.log("Built by Ryan P for ENGR116")
     const [ans, setAns] = useState(initialAns);
     const [list, setList] = useState([]);
     const [inputValue, setInputValue] = useState("");
@@ -15,7 +16,6 @@ function Calculator({initialAns,initialValue}) {
                 setInputValue("");
                 break;
             default:
-                console.log(inputValue+inp);
                 setInputValue(inputValue+inp);
                 break;
         }
@@ -41,6 +41,7 @@ function Calculator({initialAns,initialValue}) {
         <div id="mainbox">
             <Head>
                 <title>TDOP Calculator</title>
+                <meta name="viewport" content="initial-scale=1.0, width=device-width" />
             </Head>
             <main>
             <table id="history">
@@ -101,7 +102,7 @@ function Calculator({initialAns,initialValue}) {
                         <td className="button"><button className="inp" onClick={evt => handleButton("c")}>cos</button></td>
                         <td className="button"><button className="inp" onClick={evt => handleButton("t")}>tan</button></td>
                         <td className="button"><button className="inp" onClick={evt => handleButton("e")}>×10^</button></td>
-                        <td className="button"><button className="inp" onClick={evt => handleButton("")}>log (wip)</button></td>
+                        <td className="button"><button className="inp" onClick={evt => handleButton("")}>ln</button></td>
                     </tr>
                 </tbody>
             </table>
