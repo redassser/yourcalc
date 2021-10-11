@@ -56,6 +56,10 @@ var ta = symbol("t", 0); //tangent
     ta.nud = function () {
         return (Math.tan(expression(100)).toFixed(7));
     }
+var ln = symbol("l", 0); //natural log
+    ln.nud = function () {
+        return (Math.log(expression(100)).toFixed(7));
+    }
 var subtr = symbol("-", 10); //subtraction
     subtr.nud = function () {
         return -expression(100);

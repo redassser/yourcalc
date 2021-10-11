@@ -2,7 +2,7 @@ import { solve } from "../public/calc.js";
 import Head from "next/head";
 import React, {useState} from "react"
 
-function Calculator({initialAns,initialValue}) {
+function Calculator({initialAns}) {
     console.log("Built by Ryan P for ENGR116")
     const [ans, setAns] = useState(initialAns);
     const [list, setList] = useState([]);
@@ -108,8 +108,8 @@ function Calculator({initialAns,initialValue}) {
                         <td className="button"><button className="inp" onClick={evt => handleButton("s")}>sin</button></td>
                         <td className="button"><button className="inp" onClick={evt => handleButton("c")}>cos</button></td>
                         <td className="button"><button className="inp" onClick={evt => handleButton("t")}>tan</button></td>
-                        <td className="button"><button className="inp" onClick={evt => handleButton("e")}>×10^</button></td>
-                        <td className="button"><button className="inp" onClick={evt => handleButton("")}>ln</button></td>
+                        <td className="button"><button className="inp" onClick={evt => handleButton("e")}>EE</button></td>
+                        <td className="button"><button className="inp" onClick={evt => handleButton("l")}>ln</button></td>
                     </tr>
                 </tbody>
             </table>
