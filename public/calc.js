@@ -2,7 +2,7 @@
 var token; var tokens=[]; var token_nr = 0;
 //The tokenation regex
 var reg = /(?:(\d+(\.\d+)?(\e(\+|\-)?\d+)?)|(.))/g;
-//error code holder
+//error code  and prev answer holder
 var er; var answer;
 
 //defailt symbol and holder
@@ -139,6 +139,7 @@ function advance() {
 function expression(rbp) {
     var left;
     var t = token;
+    if (t===null) {return NaN}
     advance();
     try {
         left = t.nud();
@@ -157,7 +158,7 @@ export function solve(inp, ans) {
     tokenize(inp); advance(); //Turns the input into tokens and get to the first one
     var resu = expression(0); //Find the result
     var outp = resu == 0 ? 0 : resu; //If its 0 with decimals just make it 0
-    var poserr = er===0 ? " " : er; //If there is an error code, \/
+    var poserr = er===0 ? null : er; //If there is an error code, \/
     return [outp, poserr]
 }
 

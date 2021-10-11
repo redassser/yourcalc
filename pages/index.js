@@ -26,11 +26,17 @@ function Calculator({initialAns}) {
         }
     }
     function handleSub() {
-        var outp = solve(inputValue, ans);
-        var comboVal = inputValue + " = " + outp[0];
-        list.push(comboVal);
-        setList(list);
-        setAns(outp[0]);
+        var outp = solve(inputValue, ans); var comboVal;
+        if (outp[0] === NaN || outp[0] === undefined || outp[1] === null) {
+            comboVal = "Not a valid expression";
+            setAns(comboVal);
+        } else {
+            comboVal = inputValue + " = " + outp[0];
+            list.push(comboVal);
+            setList(list);
+            setAns(outp[0]);
+        }
+        
     }
     var divList = []; var i = 0;
     list.forEach(combo => {
