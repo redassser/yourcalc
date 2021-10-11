@@ -27,7 +27,7 @@ function Calculator({initialAns}) {
     }
     function handleSub() {
         var outp = solve(inputValue, ans); var comboVal;
-        if (outp[0] === NaN || outp[0] === undefined || outp[1] === null) {
+        if (outp[0] === NaN || outp[0] === undefined || outp[1] != null) {
             comboVal = "Not a valid expression";
             setAns(comboVal);
         } else {
@@ -77,7 +77,7 @@ function Calculator({initialAns}) {
                 <thead>
                     <tr>
                         <td id="input" colSpan="6">
-                            <input onKeyPress={evt => handleEnter(evt)} type="text" id="stuf" placeholder="Type your expression here." value={inputValue} onChange={evt => handleInput(evt)}></input>
+                            <input  autoFocus={true} onBlur={({target}) => target.focus()} onKeyPress={evt => handleEnter(evt)} type="text" id="stuf" placeholder="Type your expression here." value={inputValue} onChange={evt => handleInput(evt)}></input>
                         </td>
                     </tr>
                 </thead>
