@@ -42,6 +42,13 @@ function Calculator({initialAns,initialValue}) {
             <Head>
                 <title>TDOP Calculator</title>
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+                <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon.png"/>
+                <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
+                <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
+                <link rel="manifest" href="/site.webmanifest"/>
+                <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"/>
+                <meta name="msapplication-TileColor" content="#ffc40d"/>
+                <meta name="theme-color" content="#ffffff"/>
             </Head>
             <main>
             <table id="history">
@@ -74,7 +81,7 @@ function Calculator({initialAns,initialValue}) {
                         <td className="button" className="number"><button className="inp" onClick={evt => handleButton("1")}>1</button></td>
                         <td className="button" className="number"><button className="inp" onClick={evt => handleButton("2")}>2</button></td>
                         <td className="button" className="number"><button className="inp" onClick={evt => handleButton("3")}>3</button></td>
-                        <td className="button"><button className="inp" onClick={evt => handleButton("clr")}>clear</button></td>
+                        <td className="button" id="equals"><button className="inp" onClick={evt => handleButton("clr")}>clear</button></td>
                     </tr>
                     <tr>
                         <td className="button"><button className="inp" onClick={evt => handleButton("-")}>-</button></td>
@@ -94,7 +101,7 @@ function Calculator({initialAns,initialValue}) {
                         <td className="button"><button className="inp" onClick={evt => handleButton("/")}>÷</button></td>
                         <td className="button"><button className="inp" onClick={evt => handleButton("p")}>π</button></td>
                         <td className="button"><button className="inp" onClick={evt => handleButton("^")}>^</button></td>
-                        <td className="button"><button className="inp" onClick={evt => handleButton("a")}>ans</button></td>
+                        <td className="button" id="equals"><button className="inp" onClick={evt => handleButton("a")}>ans</button></td>
                         <td className="button" id="equals"><button className="inp" onClick={evt => handleSub()}>=</button></td>
                     </tr>
                     <tr className="options">
