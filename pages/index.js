@@ -3,7 +3,6 @@ import Head from "next/head";
 import React, {useState} from "react"
 
 function Calculator({initialAns}) {
-    console.log("Built by Ryan P for ENGR116")
     const [ans, setAns] = useState(initialAns);
     const [list, setList] = useState([]);
     const [inputValue, setInputValue] = useState("");
