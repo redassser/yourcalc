@@ -105,7 +105,7 @@ function Calculator({initialAns}) {
                     <tr className="options">
                         <td className="button"><button className="inp" onClick={evt => handleButton("/")}>÷</button></td>
                         <td className="button"><button className="inp" onClick={evt => handleButton("p")}>π</button></td>
-                        <td className="button"><button className="inp" onClick={evt => handleButton("^")}>^</button></td>
+                        <td className="button" className="number"><button className="inp" onClick={evt => handleButton("0")}>0</button></td>
                         <td className="button" id="equals"><button className="inp" onClick={evt => handleButton("a")}>ans</button></td>
                         <td className="button" id="equals"><button className="inp" onClick={evt => handleSub()}>=</button></td>
                     </tr>
@@ -114,7 +114,7 @@ function Calculator({initialAns}) {
                         <td className="button"><button className="inp" onClick={evt => handleButton("c")}>cos</button></td>
                         <td className="button"><button className="inp" onClick={evt => handleButton("t")}>tan</button></td>
                         <td className="button"><button className="inp" onClick={evt => handleButton("e")}>EE</button></td>
-                        <td className="button"><button className="inp" onClick={evt => handleButton("l")}>ln</button></td>
+                        <td className="button"><button className="inp" onClick={evt => handleButton("^")}>^</button></td>
                     </tr>
                 </tbody>
             </table>
